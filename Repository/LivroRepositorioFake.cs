@@ -1,6 +1,6 @@
-﻿
-using _Net_Core__ASP.Net_.Business;
+﻿using _Net_Core__ASP.Net_.Business;
 
+#nullable disable warnings
 namespace _Net_Core__ASP.Net_.Repository
 {
     public class LivroRepositorioFake : ILivroRepositorio

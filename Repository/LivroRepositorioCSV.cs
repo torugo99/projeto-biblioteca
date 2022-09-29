@@ -1,5 +1,4 @@
-﻿
-using _Net_Core__ASP.Net_.Business;
+﻿using _Net_Core__ASP.Net_.Business;
 
 namespace _Net_Core__ASP.Net_.Repository
 {
