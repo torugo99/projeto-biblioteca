@@ -25,7 +25,7 @@ namespace _Net_Core__ASP.Net_
             {
                 return context.Response.WriteAsync(caminhoAtendidos[context.Request.Path]);
             }
-            
+            context.Response.StatusCode = 404;
             return context.Response.WriteAsync("Caminho Inexistence.");
         }
 
