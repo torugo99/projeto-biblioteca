@@ -1,7 +1,7 @@
-﻿using _Net_Core__ASP.Net_.Business;
+﻿using WebAPI.Business;
 
 #nullable disable warnings
-namespace _Net_Core__ASP.Net_.Repository
+namespace WebAPI.Repository
 {
     public class LivroRepositorioFake : ILivroRepositorio
     {

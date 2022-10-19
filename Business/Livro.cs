@@ -2,7 +2,7 @@
 
 #nullable disable warnings
 
-namespace _Net_Core__ASP.Net_.Business
+namespace WebAPI.Business
 {
     public class Livro
     {

@@ -1,4 +1,4 @@
-namespace _Net_Core__ASP.Net_;
+namespace WebAPI;
 
 public class WeatherForecast
 {

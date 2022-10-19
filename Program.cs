@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using _Net_Core__ASP.Net_.Business;
-using _Net_Core__ASP.Net_.Repository;
+using WebAPI;
+using WebAPI.Business;
+using WebAPI.Repository;
 
 namespace _Net_Core__ASP.Net_
 {

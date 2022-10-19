@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace _Net_Core__ASP.Net_.Business
+namespace WebAPI.Business
 {
     public class ListaDeLeitura
     {
