@@ -23,8 +23,10 @@ namespace WebAPI
 
             if (caminhoAtendidos.ContainsKey(context.Request.Path))
             {
-                return context.Response.WriteAsync(caminhoAtendidos[context.Request.Path]);
+                var metodo = caminhoAtendidos[context.Request.Path];
+                return metodo.Invoke(context);
             }
+            
             context.Response.StatusCode = 404;
             return context.Response.WriteAsync("Caminho Inexistence.");
         }
