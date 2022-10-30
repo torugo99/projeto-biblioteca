@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebAPI;
 using WebAPI.Business;
 using WebAPI.Repository;
 
-namespace _Net_Core__ASP.Net_
+namespace WebAPI
 {
     class Program
     {
