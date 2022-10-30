@@ -1,5 +1,7 @@
+using WebAPI.Business;
 using WebAPI.Repository;
 
+#nullable disable warnings
 namespace WebAPI
 {
     public class Startup
@@ -15,11 +17,34 @@ namespace WebAPI
             builder.MapRoute("Livros/Paraler", LivrosParaLer);
             builder.MapRoute("Livros/Lendo", LivrosLendo);
             builder.MapRoute("Livros/Lidos", LivrosLidos);
+            builder.MapRoute("Cadastro/NovoLivro/{nome}/{autor}", NovoLivroParaLer);
+            builder.MapRoute("Livros/Detalhes/{id:int}", ExibeDetalhes);
             
             var rotas = builder.Build();
 
             app.UseRouter(rotas);
 
+        }
+
+        public Task ExibeDetalhes(HttpContext context)
+        {
+            int id = Convert.ToInt32(context.GetRouteValue("id"));
+            var repo = new LivroRepositorioCSV();
+            var livro = repo.Todos.First(l => l.Id == id);
+            return context.Response.WriteAsync(livro.Detalhes());
+        }
+
+        public Task NovoLivroParaLer(HttpContext context)
+        {
+            var livro = new Livro()
+            {
+                Titulo = Convert.ToString(context.GetRouteValue("nome")),
+                Autor = Convert.ToString(context.GetRouteValue("autor")),
+            };
+
+            var repo = new LivroRepositorioCSV();
+            repo.Incluir(livro);
+            return context.Response.WriteAsync("Livro Adicionado com sucesso!");
         }
 
         public Task Roteamento(HttpContext context)
