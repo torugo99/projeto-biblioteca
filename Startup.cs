@@ -19,11 +19,26 @@ namespace WebAPI
             builder.MapRoute("Livros/Lidos", LivrosLidos);
             builder.MapRoute("Cadastro/NovoLivro/{nome}/{autor}", NovoLivroParaLer);
             builder.MapRoute("Livros/Detalhes/{id:int}", ExibeDetalhes);
+            builder.MapRoute("Cadastro/NovoLivro", ExibeFormulario);
             
             var rotas = builder.Build();
 
             app.UseRouter(rotas);
 
+        }
+
+        private Task ExibeFormulario(HttpContext context)
+        {
+            var html = @"
+                <html>
+                    <form>
+                        <input/>
+                        <input/>
+                        <button> Gravar</button>
+                    </form>
+                </html>";
+
+            return context.Response.WriteAsync(html);
         }
 
         public Task ExibeDetalhes(HttpContext context)
